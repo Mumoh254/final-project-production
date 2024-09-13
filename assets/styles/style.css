@@ -47,6 +47,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: auto;
+    min-height: 100%; 
     font-family:   var(--font-family-ex);
 }
 
@@ -58,15 +60,18 @@ body {
     padding: 10px 0;
     position: relative;
     width: 1600px;
+   position: sticky;
+   top: 0;
+   z-index: 100;
 }
 
 .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding:  var(--padding);
     box-sizing: border-box;
 }
 
@@ -90,17 +95,19 @@ body {
 
 .nav-links li {
     margin: 0 10px;
+   
 }
 
 .nav-links a {
     color: var(--text-color-black);
     text-decoration: none;
-    font-size: 1rem;
+ 
     transition: color 0.3s;
+    font-size: var(--font-size-XL);
 }
 
 .nav-links a:hover {
-    color: #06b10f;
+    color:   var(--green-color);
 }
 
 .signup-button a {
@@ -114,7 +121,7 @@ body {
 }
 
 .signup-button a:hover {
-    background-color: #04a50c;
+    background-color: var(--red-color);
 }
 
 .menu-toggle {
@@ -238,8 +245,14 @@ body {
 }
 
 @media (max-width: 768px) {
+    .banner-area{
+        min-width: 95%;
+      
+    }
     .banner-content {
         flex-direction: column;
+      
+      
     }
 
     .banner-image, .banner-text {
@@ -375,6 +388,7 @@ body {
   @media (max-width: 480px) {
     .travel-card {
       width: 100%;
+      
     }
   }
   
@@ -388,7 +402,7 @@ body {
     gap: 20px;
     width: 100%;
     padding: 20px;
-    background: #000;
+   
   }
   
   .web-dev-card {
@@ -424,10 +438,14 @@ body {
   }
   
   @media (max-width: 768px) {
+
+   
+
     .web-dev-card {
-      flex-direction: column;
+   
       align-items: center;
       text-align: center;
+      background: #000;
     }
   
     .web-dev-small-image {
@@ -443,7 +461,10 @@ body {
    max-width: 1600px;
  
     display: flex;
+ 
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     justify-content: space-between;
     padding:  var(--padding);
@@ -455,10 +476,12 @@ body {
   .doctor-card {
   
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
      
-    width: 50%;
-    max-width: 60%;
+    width: 100%;
+    max-width: 100%;
   
     border-radius: 10px;
     padding:  var(--padding);
@@ -627,10 +650,17 @@ body {
   @media (max-width: 768px) {
     .travel-section {
       flex-direction: column;
+    
+      margin: 0;
     }
   
     .image-container, .text-container {
       max-width: 100%;
+    }
+    .image-container{
+        
+        display: flex;
+        justify-content: center;
     }
   
     .text-container h2 {
